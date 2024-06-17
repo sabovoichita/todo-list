@@ -1,3 +1,3 @@
 # ToDo LIST
 
-## [link](https://github.com/sabovoichita/todo-list/)
+## [➡ live link](https://sabovoichita.github.io/todo-list/)
