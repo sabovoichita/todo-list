@@ -21,8 +21,8 @@ function insertContainer() {
 }
 
 function createHTMLTask(task) {
-  return `<li>${task.name}</li>
-    <span><button id="deleteButton" class="actions">♻</button><button id="editButton">🖊</button></span>`;
+  return `<li>${task.name}
+      <span><button class="deleteButton" >♻</button><button class="editButton">🖊</button></span></li>`;
 }
 
 function displayNewTask(tasks) {
@@ -49,9 +49,11 @@ function saveTaskToLocalStorage() {
 }
 
 function loadTaskFromLocalStorage() {
-  const tasks = JSON.parse(localStorage.getItem("task"));
-  allTasks = tasks;
-  displayNewTask(allTasks);
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
+  if (tasks) {
+    allTasks = tasks;
+    displayNewTask(allTasks);
+  }
 }
 
 function initEvents() {

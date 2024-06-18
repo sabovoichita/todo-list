@@ -98,8 +98,8 @@ li {
   font-size: initial;
 }
 
-#deleteButton,
-#editButton,
+.deleteButton,
+.editButton,
 #addButton {
   padding: 0 1.3rem;
   border: none;
@@ -114,8 +114,8 @@ li {
 }
 
 #addButton:hover,
-#deleteButton:hover,
-#editButton:hover {
+.deleteButton:hover,
+.editButton:hover {
   background: #ff5e5e;
   color: rgb(221, 205, 205);
 }
