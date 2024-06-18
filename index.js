@@ -46,8 +46,18 @@ function saveTaskToLocalStorage() {
   localStorage.setItem("task", JSON.stringify(allTasks));
 }
 
+function loadTaskFromLocalStorage() {
+  const tasks = JSON.parse(localStorage.getItem("task"));
+  console.log(tasks);
+  allTasks = tasks;
+  displayNewTask(allTasks);
+  console.log(allTasks);
+}
+
 function initEvents() {
   insertContainer();
+  loadTaskFromLocalStorage();
+
   let button = $("#addButton");
   button.addEventListener("click", () => addTask());
 }
