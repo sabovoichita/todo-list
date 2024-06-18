@@ -6,8 +6,11 @@ function $(selector) {
 
 function createContainer() {
   return `<div class="todo-container">
-      <h1>ToDo List</h1>
-      <input type="text" id="taskInput" placeholder="Add a new task" />
+      <h1>
+        Todo List
+        <span>Get things done, one item at a time.</span>
+      </h1>
+      <input type="text" id="taskInput" placeholder="Add new task:" />
       <button id="addButton">Add Task</button>
       <ul id="taskList"></ul>
     </div>`;
@@ -19,13 +22,12 @@ function insertContainer() {
 
 function createHTMLTask(task) {
   return `<li>${task.name}</li>
-    <button id="deleteButton">♻</button><button id="editButton">🖊</button>`;
+    <span><button id="deleteButton" class="actions">♻</button><button id="editButton">🖊</button></span>`;
 }
 
 function displayNewTask(tasks) {
   const taskHTML = tasks.map(createHTMLTask).join("");
   $("#taskList").innerHTML = taskHTML;
-  console.log(taskHTML);
 }
 
 function addTask() {
@@ -48,10 +50,8 @@ function saveTaskToLocalStorage() {
 
 function loadTaskFromLocalStorage() {
   const tasks = JSON.parse(localStorage.getItem("task"));
-  console.log(tasks);
   allTasks = tasks;
   displayNewTask(allTasks);
-  console.log(allTasks);
 }
 
 function initEvents() {

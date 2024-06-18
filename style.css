@@ -1,12 +1,130 @@
-html {
-  height: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html,
 body {
+  background: #f7f1f1;
+  font-size: 1.1rem;
+  font-family: "Quicksand", sans-serif;
+  height: 100%;
   text-align: center;
 }
-h1 {
-  color: red;
+
+.todo-container {
+  margin: 4rem auto;
+  padding: 2rem 3rem 3rem;
+  max-width: 500px;
+  background: #ff6666;
+  color: #fff;
+  box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
 }
+
+.todo-container h1 {
+  /*text-align:center;*/
+  font-weight: normal;
+  font-size: 2.6rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.todo-container h1 span {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+  margin-left: 3px;
+  margin-top: 0.2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: rgb(65, 48, 56);
+  margin: 4rem 0 1rem;
+}
+
+.emptylist {
+  color: black;
+  margin-top: 2.6rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 input {
-  width: 200px;
+  box-shadow: none;
+  width: 50%;
+  padding: 15px 18px;
+  background: #fff;
+  border: 2px solid #ddd;
+  font: 16px font;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-family: "Quicksand", sans-serif;
+}
+
+#taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: self-end;
+  padding: 1px 1px 1px 1.6px;
+  margin: 0 auto;
+}
+
+li {
+  display: flex;
+  margin: 0 0 4px;
+  padding: 12px 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  font: 1.5rem font;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  font-family: "Quicksand", sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.todo-container input {
+  flex-grow: 1;
+  border: none;
+  background: #f7f1f1;
+  padding: 0 1.5em;
+  font-size: initial;
+}
+
+#deleteButton,
+#editButton,
+#addButton {
+  padding: 0 1.3rem;
+  border: none;
+  background: #ff6666;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+
+#addButton:hover,
+#deleteButton:hover,
+#editButton:hover {
+  background: #ff5e5e;
+  color: rgb(221, 205, 205);
+}
+
+.todo-container button:hover {
+  background: #ff5e5e;
+}
+.todo-container input,
+.todo-container button {
+  font-family: "Quicksand", sans-serif;
+  height: 3rem;
 }
