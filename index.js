@@ -34,18 +34,22 @@ function addTask() {
   if (inputText !== "") {
     const newTask = { name: inputText };
     allTasks.push(newTask);
-    console.log("allTasks:", allTasks);
     displayNewTask(allTasks);
+    console.log("allTasks:", allTasks);
+
+    saveTaskToLocalStorage();
+    $("#taskInput").value = "";
   }
+}
+
+function saveTaskToLocalStorage() {
+  localStorage.setItem("task", JSON.stringify(allTasks));
 }
 
 function initEvents() {
   insertContainer();
   let button = $("#addButton");
-  button.addEventListener("click", (e) => {
-    addTask();
-    e.preventDefault();
-  });
+  button.addEventListener("click", () => addTask());
 }
 
 initEvents();
